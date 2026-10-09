@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ITS Campus Problem-Reporting App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="phone">
+
+  <!-- PAGE 1 · HOME -->
+  <section id="homeScreen" class="screen">
+    <div class="chip">PAGE 1 · HOME</div>
+    <img class="logo" src="assets/logo-its.png" alt="Logo ITS">
+    <h1 class="title">ITS Campus<br>Problem Reports</h1>
+    <div class="bar"></div>
+    <div class="actions">
+      <button class="btn fill" data-go="new">Create New Report</button>
+      <button class="btn" data-go="reports">My Reports</button>
+    </div>
+  </section>
+
+  <!-- PAGE 2 · NEW REPORT -->
+  <section id="newScreen" class="screen" hidden>
+    <button class="back" data-go="home" aria-label="Kembali ke Home">‹ Home</button>
+    <div class="chip">PAGE 2 · NEW REPORT</div>
+    <form id="reportForm" class="screen" novalidate>
+      <div class="field select">
+        <select id="category" class="fld" required aria-label="Category">
+          <option value="" disabled selected>Category</option>
+          <option>Broken Furniture</option>
+          <option>Lighting</option>
+          <option>Cleanliness</option>
+        </select>
+      </div>
+      <textarea id="description" class="fld" placeholder="Describe the problem..." aria-label="Describe the problem"></textarea>
+      <input id="location" class="fld" type="text" placeholder="Location, e.g. Room B201" aria-label="Location">
+      <input id="photo" type="file" accept="image/*" hidden>
+      <button type="button" id="attachBtn" class="attach">+ Attach Photo</button>
+      <p id="error" class="error" role="alert"></p>
+      <button type="submit" class="btn fill">Submit Report</button>
+    </form>
+  </section>
+
+  <!-- PAGE 3 · MY REPORTS -->
+  <section id="reportsScreen" class="screen" hidden>
+    <button class="back" data-go="home" aria-label="Kembali ke Home">‹ Home</button>
+    <div class="chip">PAGE 3 · MY REPORTS</div>
+    <div id="list" class="list"></div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
